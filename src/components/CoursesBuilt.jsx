@@ -51,6 +51,7 @@ function CoursesBuilt() {
   return (
     <div className="widget courses-built">
       <h3>Selected courses built</h3>
+      <p className="section-tagline">I build ultra valuable, clean, & memorable learning experiences for highly technical content.</p>
       <div className="projects-list">
         {courses.map((course, index) => (
           <div key={index} className="project-card">

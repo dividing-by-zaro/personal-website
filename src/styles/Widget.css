@@ -9,10 +9,18 @@
 }
 
 .widget h3 {
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.section-tagline {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.5;
+  opacity: 0.6;
   margin-bottom: 1rem;
-  opacity: 0.7;
 }
 
 .clocks .clock-list {
