@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import CurrentlyReading from '../components/CurrentlyReading';
 import VegasWeather from '../components/VegasWeather';
+import DaysSinceCollege from '../components/DaysSinceCollege';
 import WorkoutTracker from '../components/WorkoutTracker';
 import '../styles/Home.css';
 
@@ -17,7 +18,10 @@ function Home() {
       </header>
 
       <main className="widgets">
-        <VegasWeather />
+        <div className="widget-column">
+          <VegasWeather />
+          <DaysSinceCollege />
+        </div>
         <CurrentlyReading />
       </main>
 

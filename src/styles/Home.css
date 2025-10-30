@@ -5,7 +5,7 @@
 }
 
 .home header {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .home h1 {
@@ -33,9 +33,15 @@
 .widgets {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
+}
+
+.widget-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .full-width-widget {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
