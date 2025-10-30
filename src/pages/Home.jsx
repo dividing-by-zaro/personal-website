@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Quote from '../components/Quote';
 import VegasWeather from '../components/VegasWeather';
+import WorkoutTracker from '../components/WorkoutTracker';
 import '../styles/Home.css';
 
 function Home() {
@@ -19,6 +20,10 @@ function Home() {
         <VegasWeather />
         <Quote />
       </main>
+
+      <div className="full-width-widget">
+        <WorkoutTracker />
+      </div>
     </div>
   );
 }
