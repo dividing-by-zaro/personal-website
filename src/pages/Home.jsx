@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Quote from '../components/Quote';
+import CurrentlyReading from '../components/CurrentlyReading';
 import VegasWeather from '../components/VegasWeather';
 import WorkoutTracker from '../components/WorkoutTracker';
 import '../styles/Home.css';
@@ -18,7 +18,7 @@ function Home() {
 
       <main className="widgets">
         <VegasWeather />
-        <Quote />
+        <CurrentlyReading />
       </main>
 
       <div className="full-width-widget">

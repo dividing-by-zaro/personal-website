@@ -49,6 +49,83 @@
   font-size: 0.9rem;
 }
 
+.currently-reading .book-display {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.currently-reading .book-cover {
+  flex-shrink: 0;
+  width: 80px;
+}
+
+.currently-reading .cover-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 2px;
+  filter: grayscale(100%);
+  opacity: 0.9;
+}
+
+.currently-reading .book-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.currently-reading .book-title {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.25rem;
+}
+
+.currently-reading .book-author {
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.7;
+  margin-bottom: 0.5rem;
+}
+
+.currently-reading .progress-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.currently-reading .progress-bar {
+  flex: 1;
+  height: 4px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.currently-reading .progress-percentage {
+  font-size: 0.85rem;
+  font-weight: 300;
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
+}
+
+.currently-reading .progress-fill {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .currently-reading .progress-bar {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .currently-reading .progress-fill {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
 .weather .weather-display {
   display: flex;
   align-items: center;
@@ -56,13 +133,13 @@
 }
 
 .weather .weather-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   line-height: 1;
   opacity: 0.8;
 }
 
 .weather .temperature {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 300;
   font-variant-numeric: tabular-nums;
 }
