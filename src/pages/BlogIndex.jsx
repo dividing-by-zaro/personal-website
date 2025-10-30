@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 import { getAllPosts } from '../utils/posts';
 import '../styles/Page.css';
 
@@ -7,9 +8,7 @@ function BlogIndex() {
 
   return (
     <div className="page">
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
+      <Header />
 
       <main>
         <h1>Blog</h1>

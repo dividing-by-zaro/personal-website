@@ -1,4 +1,4 @@
-import { SiReact, SiVite, SiSupabase } from 'react-icons/si';
+import { SiReact, SiVite, SiSupabase, SiPython, SiFastapi, SiBootstrap, SiOpenai, SiAnthropic, SiSqlalchemy } from 'react-icons/si';
 import '../styles/Widget.css';
 
 function GitHubProjects() {
@@ -7,14 +7,36 @@ function GitHubProjects() {
       title: 'Through Their Eyes',
       description: 'Visualize the reading experience at different English proficiency levels.',
       repoUrl: 'https://github.com/dividing-by-zaro/through-their-eyes',
-      deployedUrl: null, // Add when deployed
+      deployedUrl: null,
       tech: [
         { icon: SiReact, name: 'React' },
         { icon: SiVite, name: 'Vite' },
         { icon: SiSupabase, name: 'Supabase' },
       ],
     },
-    // Add more projects here as they're built
+    {
+      title: 'PromptDiff',
+      description: 'Compare LLM responses side-by-side by submitting multiple prompts to a variety of models.',
+      repoUrl: 'https://github.com/isabel-dlai/promptdiff',
+      deployedUrl: null,
+      tech: [
+        { icon: SiPython, name: 'Python' },
+        { icon: SiFastapi, name: 'FastAPI' },
+        { icon: SiBootstrap, name: 'Bootstrap' },
+        { icon: SiOpenai, name: 'OpenAI' },
+        { icon: SiAnthropic, name: 'Anthropic' },
+      ],
+    },
+    {
+      title: 'Balatro Joker Arena',
+      description: 'Community-driven ELO ranking system for Balatro jokers based on pairwise comparisons.',
+      repoUrl: 'https://github.com/isabel-dlai/balatro-elo',
+      deployedUrl: 'https://balatro-joker-arena.up.railway.app/',
+      tech: [
+        { icon: SiPython, name: 'Python' },
+        { icon: SiFastapi, name: 'FastAPI' },
+      ],
+    },
   ];
 
   return (
@@ -49,6 +71,9 @@ function GitHubProjects() {
                 className="project-link"
               >
                 Repository
+                <svg className="external-link-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.5 1.5L4.5 7.5M10.5 1.5H6.5M10.5 1.5V5.5M10.5 10.5H1.5V1.5H5.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </a>
               {project.deployedUrl && (
                 <>
@@ -59,7 +84,10 @@ function GitHubProjects() {
                     rel="noopener noreferrer"
                     className="project-link"
                   >
-                    Live Demo
+                    Live Site
+                    <svg className="external-link-icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10.5 1.5L4.5 7.5M10.5 1.5H6.5M10.5 1.5V5.5M10.5 10.5H1.5V1.5H5.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
                   </a>
                 </>
               )}

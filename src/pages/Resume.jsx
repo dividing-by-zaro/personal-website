@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 import ReactMarkdown from 'react-markdown';
 import '../styles/Page.css';
 import '../styles/Widget.css';
@@ -135,9 +135,7 @@ function Resume() {
   if (!resumeData) {
     return (
       <div className="page">
-        <nav>
-          <Link to="/">Home</Link>
-        </nav>
+        <Header />
         <main>
           <p>Loading...</p>
         </main>
@@ -147,9 +145,7 @@ function Resume() {
 
   return (
     <div className="page">
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
+      <Header />
 
       <main className="resume-page">
         <p className="resume-summary">{resumeData.summary}</p>

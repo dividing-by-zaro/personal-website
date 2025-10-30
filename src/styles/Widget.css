@@ -73,6 +73,19 @@
   opacity: 0.9;
 }
 
+.currently-reading .cover-placeholder {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .currently-reading .cover-placeholder {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
 .currently-reading .book-details {
   flex: 1;
   min-width: 0;
@@ -262,8 +275,8 @@
 }
 
 .tech-icon {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   opacity: 0.5;
   filter: grayscale(100%);
   transition: opacity 0.2s ease;
@@ -294,10 +307,18 @@
   font-weight: 300;
   opacity: 0.6;
   transition: opacity 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .project-link:hover {
   opacity: 1;
+}
+
+.external-link-icon {
+  flex-shrink: 0;
+  opacity: 0.7;
 }
 
 .link-separator {

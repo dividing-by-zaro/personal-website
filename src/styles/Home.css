@@ -4,32 +4,6 @@
   padding: 2rem;
 }
 
-.home header {
-  margin-bottom: 2rem;
-}
-
-.home h1 {
-  font-size: 2rem;
-  font-weight: 300;
-  margin-bottom: 1rem;
-}
-
-.home nav {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.home nav a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: 300;
-  transition: opacity 0.2s;
-}
-
-.home nav a:hover {
-  opacity: 0.6;
-}
-
 .widgets {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

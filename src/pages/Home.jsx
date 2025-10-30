@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Header from '../components/Header';
 import CurrentlyReading from '../components/CurrentlyReading';
 import VegasWeather from '../components/VegasWeather';
 import DaysSinceCollege from '../components/DaysSinceCollege';
@@ -9,14 +9,7 @@ import '../styles/Home.css';
 function Home() {
   return (
     <div className="home">
-      <header>
-        <h1>Isabel Zaro</h1>
-        <nav>
-          <Link to="/about">About</Link>
-          <Link to="/blog">Blog</Link>
-          <Link to="/resume">Resume</Link>
-        </nav>
-      </header>
+      <Header />
 
       <main className="widgets">
         <div className="widget-column">

@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import '../styles/Widget.css';
 
 function CurrentlyReading() {
+  const [imageError, setImageError] = useState(false);
+
   const book = {
     title: 'Mordew',
     author: 'Alex Pheby',
@@ -14,11 +17,16 @@ function CurrentlyReading() {
       <h3>Reading now</h3>
       <div className="book-display">
         <div className="book-cover">
-          <img
-            src={book.coverImage}
-            alt={`${book.title} by ${book.author}`}
-            className="cover-image"
-          />
+          {imageError ? (
+            <div className="cover-placeholder"></div>
+          ) : (
+            <img
+              src={book.coverImage}
+              alt=""
+              className="cover-image"
+              onError={() => setImageError(true)}
+            />
+          )}
         </div>
         <div className="book-details">
           <div className="book-title">{book.title}</div>

@@ -1,4 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import Header from '../components/Header';
 import ReactMarkdown from 'react-markdown';
 import { getPost } from '../utils/posts';
 import '../styles/Page.css';
@@ -10,9 +11,7 @@ function BlogPost() {
   if (!post) {
     return (
       <div className="page">
-        <nav>
-          <Link to="/blog">← Back to Blog</Link>
-        </nav>
+        <Header />
         <main>
           <p>Post not found</p>
         </main>
@@ -22,9 +21,7 @@ function BlogPost() {
 
   return (
     <div className="page">
-      <nav>
-        <Link to="/blog">← Back to Blog</Link>
-      </nav>
+      <Header />
 
       <main>
         <article className="blog-post">
