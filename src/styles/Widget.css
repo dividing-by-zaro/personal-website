@@ -237,7 +237,8 @@
   }
 }
 
-.github-projects .projects-list {
+.github-projects .projects-list,
+.courses-built .projects-list {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -277,7 +278,7 @@
 .tech-icon {
   width: 20px;
   height: 20px;
-  opacity: 0.5;
+  opacity: 1;
   filter: grayscale(100%);
   transition: opacity 0.2s ease;
 }
@@ -292,6 +293,36 @@
   line-height: 1.5;
   opacity: 0.7;
   margin-bottom: 0.75rem;
+}
+
+.course-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.stat-item {
+  font-weight: 300;
+  opacity: 0.6;
+  font-variant-numeric: tabular-nums;
+}
+
+.rating-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.star-icon {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.stat-separator {
+  opacity: 0.3;
+  font-weight: 300;
 }
 
 .project-links {
