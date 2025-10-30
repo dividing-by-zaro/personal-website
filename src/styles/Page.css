@@ -1,0 +1,79 @@
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page nav {
+  margin-bottom: 2rem;
+}
+
+.page nav a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 300;
+  transition: opacity 0.2s;
+}
+
+.page nav a:hover {
+  opacity: 0.6;
+}
+
+.page main {
+  line-height: 1.6;
+}
+
+.page h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.blog-index {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.blog-preview h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.blog-preview a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.blog-preview a:hover {
+  opacity: 0.6;
+}
+
+.blog-preview time {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.blog-post time {
+  font-size: 0.9rem;
+  opacity: 0.6;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.post-content {
+  line-height: 1.7;
+}
+
+.post-content p {
+  margin-bottom: 1rem;
+}
