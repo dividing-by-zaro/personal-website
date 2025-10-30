@@ -6,9 +6,9 @@ function DaysSinceCollege() {
 
   useEffect(() => {
     const calculateDays = () => {
-      const collegeEndDate = new Date('2018-05-18');
+      const lastFlightDate = new Date('2025-10-20');
       const today = new Date();
-      const diffTime = Math.abs(today - collegeEndDate);
+      const diffTime = Math.abs(today - lastFlightDate);
       const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
       setDays(diffDays);
     };
@@ -31,7 +31,7 @@ function DaysSinceCollege() {
 
   return (
     <div className="widget days-since">
-      <h3>Days since college</h3>
+      <h3>Days since I was last on a plane</h3>
       <div className="days-count">{days.toLocaleString()}</div>
     </div>
   );

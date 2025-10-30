@@ -36,6 +36,14 @@ function VegasWeather() {
   };
 
   useEffect(() => {
+    const updateFavicon = (icon) => {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="75" font-size="75">${icon}</text></svg>`;
+      const favicon = document.querySelector('link[rel="icon"]');
+      if (favicon) {
+        favicon.href = `data:image/svg+xml,${encodeURIComponent(svg)}`;
+      }
+    };
+
     const fetchWeather = async () => {
       try {
         // Using wttr.in - a free weather API that doesn't require API key
@@ -56,11 +64,13 @@ function VegasWeather() {
           const hour = parseInt(vegasTime);
           const isDay = hour >= 6 && hour < 18;
 
+          const weatherIcon = getWeatherIcon(weatherDesc, isDay);
           setWeather({
             temp,
-            icon: getWeatherIcon(weatherDesc, isDay),
+            icon: weatherIcon,
             description: weatherDesc
           });
+          updateFavicon(weatherIcon);
         }
       } catch (error) {
         console.error('Failed to fetch weather:', error);
