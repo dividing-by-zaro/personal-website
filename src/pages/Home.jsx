@@ -3,6 +3,7 @@ import CurrentlyReading from '../components/CurrentlyReading';
 import VegasWeather from '../components/VegasWeather';
 import DaysSinceCollege from '../components/DaysSinceCollege';
 import WorkoutTracker from '../components/WorkoutTracker';
+import GitHubProjects from '../components/GitHubProjects';
 import '../styles/Home.css';
 
 function Home() {
@@ -24,6 +25,10 @@ function Home() {
         </div>
         <CurrentlyReading />
       </main>
+
+      <div className="full-width-widget">
+        <GitHubProjects />
+      </div>
 
       <div className="full-width-widget">
         <WorkoutTracker />
