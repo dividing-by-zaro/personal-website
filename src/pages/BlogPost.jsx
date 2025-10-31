@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-import Header from '../components/Header';
 import ReactMarkdown from 'react-markdown';
 import { getPost } from '../utils/posts';
 import '../styles/Page.css';
@@ -10,19 +9,14 @@ function BlogPost() {
 
   if (!post) {
     return (
-      <div className="page">
-        <Header />
-        <main>
-          <p>Post not found</p>
-        </main>
-      </div>
+      <main>
+        <p>Post not found</p>
+      </main>
     );
   }
 
   return (
     <div className="page">
-      <Header />
-
       <main>
         <article className="blog-post">
           <h1>{post.displayTitle}</h1>

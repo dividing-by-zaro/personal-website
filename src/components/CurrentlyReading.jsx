@@ -2,42 +2,73 @@ import { useState } from 'react';
 import '../styles/Widget.css';
 
 function CurrentlyReading() {
-  const [imageError, setImageError] = useState(false);
+  const [imageErrors, setImageErrors] = useState({});
 
-  const book = {
-    title: 'Mordew',
-    author: 'Alex Pheby',
-    isbn: '1913111024',
-    coverImage: 'https://covers.openlibrary.org/b/isbn/1913111024-L.jpg',
-    progress: 13
+  const books = [
+    {
+      title: 'Mordew',
+      author: 'Alex Pheby',
+      isbn: '9781913111021',
+      coverImage: 'https://covers.openlibrary.org/b/isbn/9781913111021-L.jpg',
+      status: 'Reading'
+    },
+    {
+      title: 'One Life',
+      author: 'Megan Rapinoe',
+      isbn: '9781984881168',
+      coverImage: 'https://covers.openlibrary.org/b/isbn/9781984881168-L.jpg',
+      status: 'Reading'
+    },
+    {
+      title: 'Baptism of Fire',
+      author: 'Andrzej Sapkowski',
+      isbn: '9780316219181',
+      coverImage: 'https://covers.openlibrary.org/b/isbn/9780316219181-L.jpg',
+      status: 'Read'
+    },
+    {
+      title: 'My Year of Rest and Relaxation',
+      author: 'Ottessa Moshfegh',
+      isbn: '9780525522133',
+      coverImage: 'https://covers.openlibrary.org/b/isbn/9780525522133-L.jpg',
+      status: 'Read'
+    },
+    {
+      title: 'A Separate Peace',
+      author: 'John Knowles',
+      isbn: '9780743253970',
+      coverImage: 'https://covers.openlibrary.org/b/isbn/9780743253970-L.jpg',
+      status: 'Read'
+    }
+  ];
+
+  const handleImageError = (isbn) => {
+    setImageErrors(prev => ({ ...prev, [isbn]: true }));
   };
 
   return (
     <div className="widget currently-reading">
-      <h3>Reading now</h3>
-      <div className="book-display">
-        <div className="book-cover">
-          {imageError ? (
-            <div className="cover-placeholder"></div>
-          ) : (
-            <img
-              src={book.coverImage}
-              alt=""
-              className="cover-image"
-              onError={() => setImageError(true)}
-            />
-          )}
-        </div>
-        <div className="book-details">
-          <div className="book-title">{book.title}</div>
-          <div className="book-author">{book.author}</div>
-          <div className="progress-container">
-            <div className="progress-bar">
-              <div className="progress-fill" style={{ width: `${book.progress}%` }}></div>
+      <h3>My recent reads</h3>
+      <div className="books-list">
+        {books.map((book) => (
+          <div key={book.isbn} className="book-display">
+            <div className="book-cover">
+              {imageErrors[book.isbn] ? (
+                <div className="cover-placeholder"></div>
+              ) : (
+                <img
+                  src={book.coverImage}
+                  alt={`${book.title} by ${book.author}`}
+                  className="cover-image"
+                  onError={() => handleImageError(book.isbn)}
+                />
+              )}
+              {book.status === 'Reading' && (
+                <span className="book-status-tag">{book.status}</span>
+              )}
             </div>
-            <div className="progress-percentage">{book.progress}%</div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import '../styles/Widget.css';
+import '../styles/Home.css';
 
 function VegasWeather() {
   const [weather, setWeather] = useState(null);
+  const [time, setTime] = useState('');
 
   const getWeatherIcon = (weatherDesc, isDay) => {
     const desc = weatherDesc.toLowerCase();
@@ -84,17 +85,34 @@ function VegasWeather() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const updateTime = () => {
+      const vegasTime = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'America/Los_Angeles',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+      setTime(vegasTime);
+    };
+
+    updateTime();
+    // Update every second
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="widget weather">
-      <h3>Las Vegas</h3>
-      <div className="weather-display">
-        <span className="weather-icon" aria-label={weather?.description || 'Weather'}>
-          {weather ? weather.icon : '—'}
-        </span>
-        <span className="temperature">
-          {weather ? `${weather.temp}°F` : '—'}
-        </span>
-      </div>
+    <div className="vegas-weather-bar">
+      <span>Las Vegas</span>
+      <span className="separator">·</span>
+      <span className="weather-info" aria-label={weather?.description || 'Weather'}>
+        {weather ? `${weather.icon} ${weather.temp}°F` : '—'}
+      </span>
+      <span className="separator">·</span>
+      <span>{time || '—'}</span>
     </div>
   );
 }

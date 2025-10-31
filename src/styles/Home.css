@@ -4,6 +4,38 @@
   padding: 2rem;
 }
 
+.vegas-weather-bar {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.vegas-weather-bar .separator {
+  opacity: 0.5;
+}
+
+.vegas-weather-bar .weather-info {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .vegas-weather-bar {
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+@media (max-width: 768px) {
+  .vegas-weather-bar {
+    font-size: 0.75rem;
+  }
+}
+
 .widgets {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

@@ -16,7 +16,7 @@
 }
 
 .page nav a:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .page main {
@@ -47,12 +47,12 @@
 }
 
 .blog-preview a:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 .blog-preview time {
   font-size: 0.9rem;
-  opacity: 0.6;
+  opacity: 0.8;
   display: block;
   margin-bottom: 0.5rem;
 }
@@ -65,7 +65,7 @@
 
 .blog-post time {
   font-size: 0.9rem;
-  opacity: 0.6;
+  opacity: 0.8;
   display: block;
   margin-bottom: 2rem;
 }
@@ -176,14 +176,14 @@
 .resume-item-additional {
   font-size: 0.9rem;
   font-weight: 300;
-  opacity: 0.7;
+  opacity: 0.85;
   margin: 0.25rem 0;
 }
 
 .resume-item-subtitle {
   font-size: 0.9rem;
   font-weight: 300;
-  opacity: 0.6;
+  opacity: 0.8;
   font-style: italic;
 }
 

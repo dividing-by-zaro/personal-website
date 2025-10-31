@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Header from '../components/Header';
 import ReactMarkdown from 'react-markdown';
 import '../styles/Page.css';
 import '../styles/Widget.css';
@@ -134,19 +133,14 @@ function Resume() {
 
   if (!resumeData) {
     return (
-      <div className="page">
-        <Header />
-        <main>
-          <p>Loading...</p>
-        </main>
-      </div>
+      <main>
+        <p>Loading...</p>
+      </main>
     );
   }
 
   return (
     <div className="page">
-      <Header />
-
       <main className="resume-page">
         <p className="resume-summary">{resumeData.summary}</p>
 
