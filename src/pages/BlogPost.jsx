@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { getPost } from '../utils/posts';
 import '../styles/Page.css';
 
@@ -16,17 +17,15 @@ function BlogPost() {
   }
 
   return (
-    <div className="page">
-      <main>
-        <article className="blog-post">
-          <h1>{post.displayTitle}</h1>
-          <time>{post.date}</time>
-          <div className="post-content">
-            <ReactMarkdown>{post.content}</ReactMarkdown>
-          </div>
-        </article>
-      </main>
-    </div>
+    <main>
+      <article className="blog-post">
+        <h1>{post.displayTitle}</h1>
+        <time>{post.date}</time>
+        <div className="post-content">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
+        </div>
+      </article>
+    </main>
   );
 }
 
