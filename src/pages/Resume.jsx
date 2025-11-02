@@ -110,7 +110,16 @@ function Resume() {
       }
 
       // Check if line is a bullet point
-      if (line.match(/^[\*•]/) && currentItem) {
+      if (line.match(/^[\*•]/) && currentSection) {
+        // If there's no current item, create a default one for sections with direct bullets
+        if (!currentItem) {
+          currentItem = {
+            title: '',
+            subtitle: '',
+            additionalInfo: '',
+            content: []
+          };
+        }
         currentItem.content.push(line);
         i++;
         continue;
@@ -140,37 +149,49 @@ function Resume() {
   }
 
   return (
-    <div className="page">
-      <main className="resume-page">
-        <p className="resume-summary">{resumeData.summary}</p>
+    <main className="resume-page">
+      <p className="resume-summary">{resumeData.summary}</p>
 
-        {resumeData.sections.map((section, idx) => (
-          <div key={idx} className="widget resume-section">
-            <h3>{section.title}</h3>
-            <div className="resume-items">
-              {section.items.map((item, itemIdx) => (
-                <div key={itemIdx} className="resume-item">
-                  <div className="resume-item-header">
-                    <h4 className="resume-item-title">{item.title}</h4>
-                    {item.additionalInfo && (
-                      <p className="resume-item-additional">{item.additionalInfo}</p>
-                    )}
-                    {item.subtitle && (
-                      <span className="resume-item-subtitle">{item.subtitle}</span>
-                    )}
+      {resumeData.sections.map((section, idx) => (
+        <div key={idx} className="widget resume-section">
+          <h3>{section.title}</h3>
+          <div className="resume-items">
+            {section.items.map((item, itemIdx) => {
+              // For items with no title (like Skills section), render content directly without the box
+              if (!item.title && item.content.length > 0) {
+                return (
+                  <div key={itemIdx} className="resume-item-content">
+                    <ReactMarkdown>{item.content.join('\n')}</ReactMarkdown>
                   </div>
+                );
+              }
+
+              // For items with titles, render the full structured layout
+              return (
+                <div key={itemIdx} className="resume-item">
+                  {item.title && (
+                    <div className="resume-item-header">
+                      <h4 className="resume-item-title">{item.title}</h4>
+                      {item.additionalInfo && (
+                        <p className="resume-item-additional">{item.additionalInfo}</p>
+                      )}
+                      {item.subtitle && (
+                        <span className="resume-item-subtitle">{item.subtitle}</span>
+                      )}
+                    </div>
+                  )}
                   {item.content.length > 0 && (
                     <div className="resume-item-content">
                       <ReactMarkdown>{item.content.join('\n')}</ReactMarkdown>
                     </div>
                   )}
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
-        ))}
-      </main>
-    </div>
+        </div>
+      ))}
+    </main>
   );
 }
 
