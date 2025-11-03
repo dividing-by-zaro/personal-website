@@ -18,7 +18,7 @@ function GitHubProjects() {
       title: 'PromptDiff',
       description: 'Compare LLM responses side-by-side by submitting multiple prompts to a variety of models.',
       repoUrl: 'https://github.com/isabel-dlai/promptdiff',
-      deployedUrl: null,
+      deployedUrl: 'https://promptdiff.up.railway.app',
       tech: [
         { icon: SiPython, name: 'Python' },
         { icon: SiFastapi, name: 'FastAPI' },
