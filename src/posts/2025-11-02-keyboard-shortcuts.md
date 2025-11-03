@@ -1,5 +1,5 @@
 ---
-title: Keyboard Shortcuts
+title: Keyboard shortcuts
 date: 2025-11-02
 preview: Learning one keyboard shortcut per week to gradually build efficiency
 ---

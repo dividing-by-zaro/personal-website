@@ -138,6 +138,33 @@
   margin-bottom: 0.5rem;
 }
 
+.post-content code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  font-size: 0.95em;
+  padding: 0.2em 0.4em;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.post-content pre {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+  font-size: 0.9em;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.post-content pre code {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  font-size: 1em;
+}
+
 .post-content table {
   width: 100%;
   border-collapse: collapse;
@@ -162,6 +189,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  .post-content code {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .post-content pre {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
   .post-content th,
   .post-content td {
     border-color: rgba(255, 255, 255, 0.1);
