@@ -74,6 +74,12 @@ src/
 - Text opacity: 0.6-0.7 for muted elements, 1.0 for primary text
 - Border colors: `rgba(0, 0, 0, 0.1)` (light) / `rgba(255, 255, 255, 0.1)` (dark)
 
+**Code Formatting in Blog Posts**
+- Inline code uses monospace fonts with subtle gray background
+- Font stack: SF Mono, Monaco, Inconsolata, Fira Mono, etc.
+- Padding and borders for definition without breaking minimalism
+- Full dark mode support for code blocks
+
 ## Common Tasks
 
 ### Adding a New Blog Post
@@ -104,6 +110,16 @@ src/
 4. Add to Home.jsx in appropriate section
 5. Follow grayscale styling patterns
 6. Include dark mode support
+
+## Design Considerations
+
+**Images & Visual Content**
+When adding images or screenshots to the site, maintain minimalism through:
+- **Expandable cards**: Collapsed by default, expand on click to reveal grayscale images
+- **Monochrome filter**: Apply grayscale to all images to maintain aesthetic
+- **Progressive disclosure**: Show text first, images on demand
+- **Text-first approach**: Prioritize written content over visual elements
+- Consider: hover-reveal images, lightbox modals, or side-by-side layouts (desktop only)
 
 ## Important Notes
 

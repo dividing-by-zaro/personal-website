@@ -4,7 +4,7 @@ date: 2025-11-09
 preview: A definitive ranking of letters from S-tier to F-tier
 ---
 
-Letters ranked based by their aesthetic and sonic value.
+Letters ranked based by their aesthetic and sonic appeal.
 
 | Tier | Letters |
 |------|---------|

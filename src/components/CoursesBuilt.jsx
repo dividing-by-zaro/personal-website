@@ -1,14 +1,45 @@
+import { useState, useEffect } from 'react';
 import { SiPython, SiJupyter, SiOpenai, SiAnthropic, SiGooglesheets, SiPandas, SiTableau, SiSqlite, SiGooglegemini } from 'react-icons/si';
 import '../styles/Widget.css';
 
 function CoursesBuilt() {
+  const [courseraData, setCourseraData] = useState({
+    enrollments: 17205,
+    rating: 4.8,
+  });
+
+  useEffect(() => {
+    const fetchCourseraData = async () => {
+      try {
+        // Use CORS proxy to fetch Coursera page
+        const response = await fetch('https://corsproxy.io/?' + encodeURIComponent('https://www.coursera.org/professional-certificates/data-analytics'));
+        const html = await response.text();
+
+        // Parse enrollments from <strong><span>17,392</span></strong>
+        const enrollmentMatch = html.match(/<strong><span>([\d,]+)<\/span><\/strong>\s*already enrolled/);
+        const enrollments = enrollmentMatch ? parseInt(enrollmentMatch[1].replace(/,/g, '')) : 17205;
+
+        // Parse rating from aria-label="X.X stars"
+        const ratingMatch = html.match(/aria-label="([\d.]+)\s*stars"/);
+        const rating = ratingMatch ? parseFloat(ratingMatch[1]) : 4.8;
+
+        setCourseraData({ enrollments, rating });
+      } catch (error) {
+        console.error('Failed to fetch Coursera data:', error);
+        // Keep default values on error
+      }
+    };
+
+    fetchCourseraData();
+  }, []);
+
   const courses = [
     {
       title: 'Data Analytics Professional Certificate',
       description: 'Extract insights from data using statistical techniques, Python, SQL, and AI tools while developing skills in visualization and storytelling.',
       courseUrl: 'https://www.deeplearning.ai/courses/data-analytics/',
-      lifetimeEnrollments: 17205,
-      rating: 4.8,
+      lifetimeEnrollments: courseraData.enrollments,
+      rating: courseraData.rating,
       tech: [
         { icon: SiGooglesheets, name: 'Google Sheets' },
         { icon: SiJupyter, name: 'Jupyter' },
