@@ -19,7 +19,9 @@ In the spirit of Atomic Habits, I pick one new keyboard shortcut to practice eac
 
 ## Firefox
 
-- `⌘l` - Jump to nav bar
+- `⌘l` — Jump to nav bar
+- `⌘w` — Close tab
+- `⌘t` — New tab
 
 ## VS Code
 

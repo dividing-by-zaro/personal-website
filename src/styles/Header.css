@@ -28,7 +28,7 @@
 }
 
 .site-header nav a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 @media (max-width: 768px) {

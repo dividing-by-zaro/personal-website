@@ -16,7 +16,7 @@
 }
 
 .page nav a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .page main {
@@ -71,7 +71,7 @@
 }
 
 .blog-preview a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .blog-dots {
@@ -83,7 +83,7 @@
 
 .blog-preview time {
   font-size: 1.1rem;
-  opacity: 0.6;
+  opacity: 0.75;
   white-space: nowrap;
 }
 
@@ -292,7 +292,7 @@
   font-weight: 300;
   line-height: 1.6;
   margin-bottom: 1rem;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .resume-section {
@@ -329,14 +329,14 @@
 .resume-item-additional {
   font-size: 0.9rem;
   font-weight: 300;
-  opacity: 0.85;
+  opacity: 0.9;
   margin: 0.25rem 0;
 }
 
 .resume-item-subtitle {
   font-size: 0.9rem;
   font-weight: 300;
-  opacity: 0.8;
+  opacity: 0.85;
   font-style: italic;
 }
 
@@ -356,7 +356,7 @@
   margin-bottom: 0.5rem;
   padding-left: 1rem;
   position: relative;
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .resume-item-content li:before {
@@ -403,7 +403,7 @@
 .caret {
   flex-shrink: 0;
   margin-top: 0.15rem;
-  opacity: 0.8;
+  opacity: 0.7;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -478,7 +478,7 @@
 
 .blog-tag {
   font-size: 0.85rem;
-  opacity: 0.6;
+  opacity: 0.75;
   font-weight: 300;
   white-space: nowrap;
 }
@@ -496,7 +496,7 @@
 
 .post-meta time {
   font-size: 0.9rem;
-  opacity: 0.7;
+  opacity: 0.8;
   font-weight: 300;
 }
 
@@ -507,7 +507,7 @@
 
 .post-tag {
   font-size: 0.85rem;
-  opacity: 0.65;
+  opacity: 0.75;
   padding: 0.2rem 0.6rem;
   background-color: rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -517,7 +517,7 @@
 }
 
 .post-tag:hover {
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 @media (prefers-color-scheme: dark) {
