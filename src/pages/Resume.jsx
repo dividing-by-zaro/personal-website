@@ -8,7 +8,7 @@ function Resume() {
   const [expandedItems, setExpandedItems] = useState({});
 
   useEffect(() => {
-    fetch('/src/assets/all professional experience.md')
+    fetch('/all professional experience.md')
       .then(response => response.text())
       .then(text => {
         const parsed = parseResume(text);
@@ -189,18 +189,18 @@ function Resume() {
               // Education logos mapping
               const educationLogos = {
                 'Master of Education, Secondary Science Curriculum and Instruction': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPC6jQpdbMcbrSmkiOh6sJLzegmHjBnG-b_Q&s',
-                'Bachelor of Arts, Cognitive Science': '/src/assets/UniversityofPennsylvania_Shield_RGB-2.png'
+                'Bachelor of Arts, Cognitive Science': '/UniversityofPennsylvania_Shield_RGB-2.png'
               };
 
               // Professional Experience logos mapping
               const professionalLogos = {
-                'DeepLearning.AI': '/src/assets/deeplearningai-logo.jpg',
-                'The AI Education Project (aiEDU)': '/src/assets/aiedu-logo.jpg',
-                'Code.org': '/src/assets/code-org-logo.png',
-                'CodePath.org': '/src/assets/codepath-logo.png',
-                'Sunrise Mountain High School': '/src/assets/ccsd-logo.png',
-                'Kode with Klossy': '/src/assets/kwk-logo.png',
-                'University of Pennsylvania': '/src/assets/UniversityofPennsylvania_Shield_RGB-2.png'
+                'DeepLearning.AI': '/deeplearningai-logo.jpg',
+                'The AI Education Project (aiEDU)': '/aiedu-logo.jpg',
+                'Code.org': '/code-org-logo.png',
+                'CodePath.org': '/codepath-logo.png',
+                'Sunrise Mountain High School': '/ccsd-logo.png',
+                'Kode with Klossy': '/kwk-logo.png',
+                'University of Pennsylvania': '/UniversityofPennsylvania_Shield_RGB-2.png'
               };
 
               // For Professional Experience, render collapsible items
