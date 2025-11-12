@@ -41,7 +41,7 @@ function GitHubProjects() {
 
   return (
     <div className="widget github-projects">
-      <h3>Recent Projects</h3>
+      <h3>Recent projects</h3>
       <p className="section-tagline">I code & vibe code cool stuff for students & the community.</p>
       <div className="projects-list">
         {projects.map((project, index) => (
