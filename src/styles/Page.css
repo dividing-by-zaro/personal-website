@@ -402,7 +402,7 @@
 
 .caret {
   flex-shrink: 0;
-  margin-top: 0.5rem;
+  margin-top: 0.15rem;
   opacity: 0.8;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -417,6 +417,51 @@
 
 .resume-item-collapsible:hover .caret {
   opacity: 1;
+}
+
+/* Education items with logos */
+.resume-item-with-logo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.resume-item-logo {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.resume-item-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+}
+
+/* Zoom in on Penn shield */
+.upenn-logo {
+  overflow: hidden;
+}
+
+.upenn-logo img {
+  transform: scale(1.8);
+  object-fit: cover;
+}
+
+.resume-item-content-wrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .resume-item-logo img {
+    opacity: 0.7;
+  }
 }
 
 /* Blog tags on index page */

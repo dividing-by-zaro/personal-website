@@ -184,6 +184,13 @@ function Resume() {
               const itemKey = `${idx}-${itemIdx}`;
               const isExpanded = expandedItems[itemKey];
               const isProfessionalExp = section.title === 'Professional Experience';
+              const isEducation = section.title === 'Education';
+
+              // Education logos mapping
+              const educationLogos = {
+                'Master of Education, Secondary Science Curriculum and Instruction': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPC6jQpdbMcbrSmkiOh6sJLzegmHjBnG-b_Q&s',
+                'Bachelor of Arts, Cognitive Science': '/src/assets/UniversityofPennsylvania_Shield_RGB-2.png'
+              };
 
               // For Professional Experience, render collapsible items
               if (isProfessionalExp) {
@@ -206,13 +213,9 @@ function Resume() {
                             )}
                           </div>
                         )}
-                        {item.content.length > 0 && (
+                        {item.content.length > 0 && isExpanded && (
                           <div className="resume-item-content">
-                            {isExpanded ? (
-                              <ReactMarkdown>{item.content.join('\n')}</ReactMarkdown>
-                            ) : (
-                              <ReactMarkdown>{item.content[0]}</ReactMarkdown>
-                            )}
+                            <ReactMarkdown>{item.content.join('\n')}</ReactMarkdown>
                           </div>
                         )}
                       </div>
@@ -221,6 +224,36 @@ function Resume() {
                           <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                       </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              // For Education section, render with logo
+              if (isEducation && item.title) {
+                const logo = educationLogos[item.title];
+                return (
+                  <div key={itemIdx} className="resume-item resume-item-with-logo">
+                    {logo && (
+                      <div className={`resume-item-logo ${item.title.includes('Pennsylvania') ? 'upenn-logo' : ''}`}>
+                        <img src={logo} alt={item.title} />
+                      </div>
+                    )}
+                    <div className="resume-item-content-wrapper">
+                      <div className="resume-item-header">
+                        <h4 className="resume-item-title">{item.title}</h4>
+                        {item.additionalInfo && (
+                          <p className="resume-item-additional">{item.additionalInfo}</p>
+                        )}
+                        {item.subtitle && (
+                          <span className="resume-item-subtitle">{item.subtitle}</span>
+                        )}
+                      </div>
+                      {item.content.length > 0 && (
+                        <div className="resume-item-content">
+                          <ReactMarkdown>{item.content.join('\n')}</ReactMarkdown>
+                        </div>
+                      )}
                     </div>
                   </div>
                 );
