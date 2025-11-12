@@ -16,6 +16,9 @@ export default defineConfig({
     include: ['buffer']
   },
   preview: {
-    allowedHosts: ['www.isabelzaro.com', 'isabelzaro.com']
-  }
+    allowedHosts: ['www.isabelzaro.com', 'isabelzaro.com'],
+    strictPort: false,
+    host: true
+  },
+  appType: 'spa'
 })
