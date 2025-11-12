@@ -419,6 +419,11 @@
   opacity: 1;
 }
 
+/* Expanded content for professional experience */
+.resume-item-content-expanded {
+  margin-top: 0.75rem;
+}
+
 /* Education items with logos */
 .resume-item-with-logo {
   display: flex;

@@ -192,8 +192,20 @@ function Resume() {
                 'Bachelor of Arts, Cognitive Science': '/src/assets/UniversityofPennsylvania_Shield_RGB-2.png'
               };
 
+              // Professional Experience logos mapping
+              const professionalLogos = {
+                'DeepLearning.AI': '/src/assets/deeplearningai-logo.jpg',
+                'The AI Education Project (aiEDU)': '/src/assets/aiedu-logo.jpg',
+                'Code.org': '/src/assets/code-org-logo.png',
+                'CodePath.org': '/src/assets/codepath-logo.png',
+                'Sunrise Mountain High School': '/src/assets/ccsd-logo.png',
+                'Kode with Klossy': '/src/assets/kwk-logo.png',
+                'University of Pennsylvania': '/src/assets/UniversityofPennsylvania_Shield_RGB-2.png'
+              };
+
               // For Professional Experience, render collapsible items
               if (isProfessionalExp) {
+                const logo = professionalLogos[item.title];
                 return (
                   <div
                     key={itemIdx}
@@ -201,6 +213,11 @@ function Resume() {
                     onClick={() => toggleItem(idx, itemIdx)}
                   >
                     <div className="resume-item-header-collapsible">
+                      {logo && (
+                        <div className="resume-item-logo">
+                          <img src={logo} alt={item.title} />
+                        </div>
+                      )}
                       <div className="resume-item-info">
                         {item.title && (
                           <div className="resume-item-header">
@@ -213,11 +230,6 @@ function Resume() {
                             )}
                           </div>
                         )}
-                        {item.content.length > 0 && isExpanded && (
-                          <div className="resume-item-content">
-                            <ReactMarkdown>{item.content.join('\n')}</ReactMarkdown>
-                          </div>
-                        )}
                       </div>
                       <div className={`caret ${isExpanded ? 'caret-up' : 'caret-down'}`}>
                         <svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -225,6 +237,11 @@ function Resume() {
                         </svg>
                       </div>
                     </div>
+                    {item.content.length > 0 && isExpanded && (
+                      <div className="resume-item-content resume-item-content-expanded">
+                        <ReactMarkdown>{item.content.join('\n')}</ReactMarkdown>
+                      </div>
+                    )}
                   </div>
                 );
               }
