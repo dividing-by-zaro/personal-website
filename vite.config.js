@@ -14,5 +14,8 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['buffer']
+  },
+  preview: {
+    allowedHosts: ['www.isabelzaro.com', 'isabelzaro.com']
   }
 })
