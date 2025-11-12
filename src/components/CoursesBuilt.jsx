@@ -35,6 +35,19 @@ function CoursesBuilt() {
 
   const courses = [
     {
+      title: 'AI Python for Beginners',
+      description: 'Write Python scripts that interact with large language models, automate tasks, and analyze your own data while building AI-powered applications from day one.',
+      courseUrl: 'https://www.deeplearning.ai/short-courses/ai-python-for-beginners/',
+      lifetimeEnrollments: 350300,
+      rating: 4.7,
+      tech: [
+        { icon: SiJupyter, name: 'Jupyter' },
+        { icon: SiPython, name: 'Python' },
+        { icon: SiOpenai, name: 'OpenAI' },
+        { icon: SiAnthropic, name: 'Anthropic' },
+      ],
+    },
+    {
       title: 'Data Analytics Professional Certificate',
       description: 'Extract insights from data using statistical techniques, Python, SQL, and AI tools while developing skills in visualization and storytelling.',
       courseUrl: 'https://www.deeplearning.ai/courses/data-analytics/',
@@ -63,19 +76,6 @@ function CoursesBuilt() {
         { icon: SiPython, name: 'Python' },
         { iconUrl: 'https://registry.npmmirror.com/@lobehub/icons-static-png/latest/files/dark/crewai-color.png', name: 'CrewAI' },
         { icon: SiOpenai, name: 'OpenAI' },
-      ],
-    },
-    {
-      title: 'AI Python for Beginners',
-      description: 'Write Python scripts that interact with large language models, automate tasks, and analyze your own data while building AI-powered applications from day one.',
-      courseUrl: 'https://www.deeplearning.ai/short-courses/ai-python-for-beginners/',
-      lifetimeEnrollments: 350300,
-      rating: 4.7,
-      tech: [
-        { icon: SiJupyter, name: 'Jupyter' },
-        { icon: SiPython, name: 'Python' },
-        { icon: SiOpenai, name: 'OpenAI' },
-        { icon: SiAnthropic, name: 'Anthropic' },
       ],
     },
   ];

@@ -4,17 +4,6 @@ import '../styles/Widget.css';
 function GitHubProjects() {
   const projects = [
     {
-      title: 'Through Their Eyes',
-      description: 'Visualize the reading experience at different English proficiency levels.',
-      repoUrl: 'https://github.com/dividing-by-zaro/through-their-eyes',
-      deployedUrl: null,
-      tech: [
-        { icon: SiReact, name: 'React' },
-        { icon: SiVite, name: 'Vite' },
-        { icon: SiSupabase, name: 'Supabase' },
-      ],
-    },
-    {
       title: 'PromptDiff',
       description: 'Compare LLM responses side-by-side by submitting multiple prompts to a variety of models.',
       repoUrl: 'https://github.com/isabel-dlai/promptdiff',
@@ -35,6 +24,17 @@ function GitHubProjects() {
       tech: [
         { icon: SiPython, name: 'Python' },
         { icon: SiFastapi, name: 'FastAPI' },
+      ],
+    },
+    {
+      title: 'Through Their Eyes',
+      description: 'Visualize the reading experience at different English proficiency levels.',
+      repoUrl: 'https://github.com/dividing-by-zaro/through-their-eyes',
+      deployedUrl: null,
+      tech: [
+        { icon: SiReact, name: 'React' },
+        { icon: SiVite, name: 'Vite' },
+        { icon: SiSupabase, name: 'Supabase' },
       ],
     },
   ];

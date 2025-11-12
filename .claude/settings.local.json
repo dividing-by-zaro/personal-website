@@ -14,7 +14,9 @@
       "WebFetch(domain:www.coursera.org)",
       "WebFetch(domain:www.deeplearning.ai)",
       "Bash(lsof:*)",
-      "Bash(xargs kill -9)"
+      "Bash(xargs kill -9)",
+      "Bash(dig:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

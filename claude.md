@@ -156,6 +156,38 @@ When adding images or screenshots to the site, maintain minimalism through:
 - **Text-first approach**: Prioritize written content over visual elements
 - Consider: hover-reveal images, lightbox modals, or side-by-side layouts (desktop only)
 
+## Manual Data Update Reminders
+
+Some content requires periodic manual updates directly in the code:
+
+### CoursesBuilt Component
+Location: `src/components/CoursesBuilt.jsx`
+
+**CrewAI Course (DeepLearning.AI)**
+- Update `lifetimeEnrollments` field
+- Update `rating` field (format: "X.X/5.0")
+- Data source: Check DeepLearning.AI course dashboard or public page
+
+**AP4B Course (DeepLearning.AI)**
+- Update `lifetimeEnrollments` field
+- Update `rating` field (format: "X.X/5.0")
+- Data source: Check DeepLearning.AI course dashboard or public page
+
+**Note**: Data Analytics cert data auto-fetches from Coursera, no manual update needed.
+
+### CurrentlyReading Component
+Location: `src/components/CurrentlyReading.jsx`
+
+**Books Array**
+- Add new books to top of array: `{ title, author, isbn, status }`
+- Remove oldest book from bottom to maintain exactly 5 books
+- Status: `"Reading"` (shows badge) or `"Read"` (no badge)
+- Cover images load automatically via ISBN from Open Library
+
+**Recommended Update Frequency**
+- CoursesBuilt: Monthly or when significant enrollment/rating milestones reached
+- CurrentlyReading: As you finish/start books (variable)
+
 ## Important Notes
 
 - **No TypeScript**: This project uses plain JavaScript
