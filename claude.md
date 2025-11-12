@@ -17,9 +17,12 @@ A minimal, grayscale personal website built with React and Vite.
 ```
 src/
 ├── components/          # Reusable UI components
-│   ├── Quote.jsx       # Random quote display
+│   ├── Header.jsx      # Site navigation header
 │   ├── VegasWeather.jsx # Live Vegas weather with icons
-│   └── WorkoutTracker.jsx # GitHub-style workout tracker
+│   ├── WorkoutTracker.jsx # GitHub-style workout tracker (CSV-powered)
+│   ├── CurrentlyReading.jsx # Book covers showing recent reads
+│   ├── CoursesBuilt.jsx # Professional course projects display
+│   └── GitHubProjects.jsx # GitHub project cards
 ├── pages/              # Route pages
 │   ├── Home.jsx        # Landing page with widgets
 │   ├── About.jsx       # About page
@@ -45,8 +48,30 @@ src/
 ### WorkoutTracker
 - GitHub-style contribution graph (vertical layout, 7 rows for days of week)
 - Displays year-to-date active minutes with intensity-based grayscale shading
-- Data stored in component (update `activeMinutesData` object to add new data)
+- **Data source**: Fetches from published Google Sheets CSV on component mount
+- CSV format: Two columns (date in M/D/YYYY, duration in minutes)
+- Automatically converts date format from M/D/YYYY to YYYY-MM-DD
+- Includes loading and error states
 - Intensity levels: 0 (blank), 1 (1-19 min), 2 (20-39), 3 (40-59), 4 (60+)
+
+### CurrentlyReading
+- Displays 5 most recent books with cover images from Open Library
+- Books have status: "Reading" (shows badge) or "Read" (no badge)
+- Each book has: title, author, ISBN, cover image
+- Always maintain exactly 5 books (remove oldest when adding new)
+- Graceful fallback for missing cover images
+
+### CoursesBuilt
+- Professional work showcase for course development projects
+- Auto-fetches live Coursera enrollment/rating data for Data Analytics cert
+- Displays tech stack icons (from react-icons and custom URLs)
+- Shows enrollments, ratings, and course links
+- Static data for DeepLearning.AI courses
+
+### GitHubProjects
+- Displays curated GitHub projects with descriptions
+- Shows tech stack and project links
+- Links to live demos and repositories
 
 ### Blog System
 - Markdown files in `src/posts/` directory
@@ -95,13 +120,23 @@ src/
 3. Write content in markdown below frontmatter
 4. Will auto-appear on `/blog` sorted by date
 
-### Adding New Workout Data
-1. Open `src/components/WorkoutTracker.jsx`
-2. Update `activeMinutesData` object with new entries:
-   ```javascript
-   '2025-10-28': 45,  // Add entries in YYYY-MM-DD format
-   ```
-3. Component will automatically reflect changes
+### Updating Workout Data
+1. Add new entries to the Google Sheets CSV (date in M/D/YYYY format, duration in minutes)
+2. Publish the sheet to web as CSV
+3. Component automatically fetches fresh data on each page load
+4. No code changes needed - just update the spreadsheet
+
+### Updating Reading List
+1. Open `src/components/CurrentlyReading.jsx`
+2. Add new book to top of `books` array with: title, author, ISBN, status ("Reading" or "Read")
+3. Remove oldest book from bottom to maintain exactly 5 books
+4. Cover images load automatically from Open Library using ISBN
+
+### Updating Course Information
+1. Open `src/components/CoursesBuilt.jsx`
+2. Update course objects with: lifetimeEnrollments, rating, courseUrl
+3. Remove `comingSoon: true` when course launches
+4. Coursera data auto-fetches on load; DeepLearning.AI courses are static
 
 ### Creating a New Widget
 1. Create component in `src/components/YourWidget.jsx`
@@ -143,10 +178,16 @@ npm run preview  # Preview production build
 - React 19.1.1 + React Router DOM 7.9.5
 - Vite 7.1.7
 
+**UI Components**
+- react-icons (for tech stack icons in CoursesBuilt, GitHubProjects)
+
 **Blog System**
 - gray-matter 4.0.3 (frontmatter parsing)
 - react-markdown 10.1.0 (rendering)
 - buffer 6.0.3 (for gray-matter compatibility)
 
-**Weather**
-- Uses wttr.in free API (no package needed)
+**Data Sources**
+- wttr.in API (weather data, no auth required)
+- Open Library API (book covers via ISBN, no auth required)
+- Google Sheets CSV (workout data via published sheet URL)
+- Coursera page scraping via CORS proxy (enrollment/rating data)

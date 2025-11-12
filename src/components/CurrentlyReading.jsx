@@ -6,6 +6,13 @@ function CurrentlyReading() {
 
   const books = [
     {
+      title: 'Deep Work',
+      author: 'Cal Newport',
+      isbn: '9781455586691',
+      coverImage: 'https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg',
+      status: 'Reading'
+    },
+    {
       title: 'Mordew',
       author: 'Alex Pheby',
       isbn: '9781913111021',
@@ -13,31 +20,24 @@ function CurrentlyReading() {
       status: 'Reading'
     },
     {
+      title: 'Atomic Habits',
+      author: 'James Clear',
+      isbn: '9780735211292',
+      coverImage: 'https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg',
+      status: 'Read'
+    },
+    {
       title: 'One Life',
       author: 'Megan Rapinoe',
       isbn: '9781984881168',
       coverImage: 'https://covers.openlibrary.org/b/isbn/9781984881168-L.jpg',
-      status: 'Reading'
+      status: 'Read'
     },
     {
       title: 'Baptism of Fire',
       author: 'Andrzej Sapkowski',
       isbn: '9780316219181',
       coverImage: 'https://covers.openlibrary.org/b/isbn/9780316219181-L.jpg',
-      status: 'Read'
-    },
-    {
-      title: 'My Year of Rest and Relaxation',
-      author: 'Ottessa Moshfegh',
-      isbn: '9780525522133',
-      coverImage: 'https://covers.openlibrary.org/b/isbn/9780525522133-L.jpg',
-      status: 'Read'
-    },
-    {
-      title: 'A Separate Peace',
-      author: 'John Knowles',
-      isbn: '9780743253970',
-      coverImage: 'https://covers.openlibrary.org/b/isbn/9780743253970-L.jpg',
       status: 'Read'
     }
   ];

@@ -55,8 +55,9 @@ function CoursesBuilt() {
     {
       title: 'Design, Develop, and Deploy Multi-Agent Systems with CrewAI',
       description: 'Build multi-agent systems that go beyond single-task automation. Create intelligent agent teams that plan, reason, and collaborate using tools, memory, and guardrails.',
-      courseUrl: 'https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/',
-      comingSoon: true,
+      courseUrl: 'https://www.deeplearning.ai/courses/design-develop-and-deploy-multi-agent-systems-with-crewai/',
+      lifetimeEnrollments: 1665,
+      rating: 4.8,
       tech: [
         { icon: SiJupyter, name: 'Jupyter' },
         { icon: SiPython, name: 'Python' },
