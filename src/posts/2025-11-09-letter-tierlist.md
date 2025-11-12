@@ -38,6 +38,8 @@ And ChatGPT 5.
 | D | Y |
 | F | A, E, I, O, U |
 
+Conclusion: LLMs hate vowels.
+
 ### Prompt
 
 > Create a tierlist of capital letters of the alphabet based on how cool they are - how they sound in a word, especially at the beginning of a word, how they look, and their general aesthetic and sonic value.

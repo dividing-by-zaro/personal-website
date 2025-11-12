@@ -5,6 +5,7 @@ import '../styles/Widget.css';
 
 function Resume() {
   const [resumeData, setResumeData] = useState(null);
+  const [expandedItems, setExpandedItems] = useState({});
 
   useEffect(() => {
     fetch('/src/assets/all professional experience.md')
@@ -12,9 +13,23 @@ function Resume() {
       .then(text => {
         const parsed = parseResume(text);
         setResumeData(parsed);
+
+        // Set DeepLearning.AI (first Professional Experience item) as expanded by default
+        const profExpIdx = parsed.sections.findIndex(s => s.title === 'Professional Experience');
+        if (profExpIdx !== -1) {
+          setExpandedItems({ [`${profExpIdx}-0`]: true });
+        }
       })
       .catch(error => console.error('Error loading resume:', error));
   }, []);
+
+  const toggleItem = (sectionIdx, itemIdx) => {
+    const key = `${sectionIdx}-${itemIdx}`;
+    setExpandedItems(prev => ({
+      ...prev,
+      [key]: !prev[key]
+    }));
+  };
 
   const parseResume = (text) => {
     const lines = text.split('\n');
@@ -166,7 +181,52 @@ function Resume() {
                 );
               }
 
-              // For items with titles, render the full structured layout
+              const itemKey = `${idx}-${itemIdx}`;
+              const isExpanded = expandedItems[itemKey];
+              const isProfessionalExp = section.title === 'Professional Experience';
+
+              // For Professional Experience, render collapsible items
+              if (isProfessionalExp) {
+                return (
+                  <div
+                    key={itemIdx}
+                    className={`resume-item resume-item-collapsible ${isExpanded ? 'expanded' : 'collapsed'}`}
+                    onClick={() => toggleItem(idx, itemIdx)}
+                  >
+                    <div className="resume-item-header-collapsible">
+                      <div className="resume-item-info">
+                        {item.title && (
+                          <div className="resume-item-header">
+                            <h4 className="resume-item-title">{item.title}</h4>
+                            {item.additionalInfo && (
+                              <p className="resume-item-additional">{item.additionalInfo}</p>
+                            )}
+                            {item.subtitle && (
+                              <span className="resume-item-subtitle">{item.subtitle}</span>
+                            )}
+                          </div>
+                        )}
+                        {item.content.length > 0 && (
+                          <div className="resume-item-content">
+                            {isExpanded ? (
+                              <ReactMarkdown>{item.content.join('\n')}</ReactMarkdown>
+                            ) : (
+                              <ReactMarkdown>{item.content[0]}</ReactMarkdown>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                      <div className={`caret ${isExpanded ? 'caret-up' : 'caret-down'}`}>
+                        <svg width="16" height="16" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M2 4L6 8L10 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              // For other sections, render normally
               return (
                 <div key={itemIdx} className="resume-item">
                   {item.title && (
