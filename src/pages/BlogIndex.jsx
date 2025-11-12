@@ -36,6 +36,13 @@ function BlogIndex() {
                     <Link to={`/thoughts/${post.date}/${post.title}`}>
                       {post.displayTitle}
                     </Link>
+                    {post.tags && post.tags.length > 0 && (
+                      <span className="blog-tags">
+                        {post.tags.map(tag => (
+                          <span key={tag} className="blog-tag">#{tag}</span>
+                        ))}
+                      </span>
+                    )}
                     <span className="blog-dots"></span>
                     <time>{formatDate(post.date)}</time>
                   </article>

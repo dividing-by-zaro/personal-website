@@ -20,7 +20,16 @@ function BlogPost() {
     <main>
       <article className="blog-post">
         <h1>{post.displayTitle}</h1>
-        <time>{post.date}</time>
+        <div className="post-meta">
+          <time>{post.date}</time>
+          {post.tags && post.tags.length > 0 && (
+            <div className="post-tags">
+              {post.tags.map(tag => (
+                <span key={tag} className="post-tag">#{tag}</span>
+              ))}
+            </div>
+          )}
+        </div>
         <div className="post-content">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{post.content}</ReactMarkdown>
         </div>

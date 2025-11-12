@@ -2,6 +2,7 @@
 title: Keyboard shortcuts
 date: 2025-11-02
 preview: Learning one keyboard shortcut per week to gradually build efficiency
+tags: [productivity]
 ---
 
 In the spirit of Atomic Habits, I pick one new keyboard shortcut to practice each week. I use many of these daily:

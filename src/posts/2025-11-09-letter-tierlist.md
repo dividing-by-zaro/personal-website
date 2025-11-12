@@ -2,6 +2,7 @@
 title: Letter tierlist
 date: 2025-11-09
 preview: A definitive ranking of letters from S-tier to F-tier
+tags: [trivia]
 ---
 
 Letters ranked (by me) based by their aesthetic and sonic appeal.

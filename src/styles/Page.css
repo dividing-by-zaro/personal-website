@@ -390,3 +390,48 @@
     border-color: rgba(255, 255, 255, 0.2);
   }
 }
+
+/* Blog tags on index page */
+.blog-tags {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.blog-tag {
+  font-size: 0.85rem;
+  opacity: 0.6;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+/* Blog post tags */
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.post-tags {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.post-tag {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  padding: 0.25rem 0.75rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  font-weight: 300;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-tag {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
