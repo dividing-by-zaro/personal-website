@@ -5,7 +5,7 @@ preview: My strategies and systems for maintaining minimal phone usage
 tags: [productivity]
 ---
 
-I average **52 minutes** of screentime on my iPhone each day. The average American spends **5 hours and 16 minutes**.
+I average **52 minutes** of screentime on my iPhone each day. The average American spends **5 hours and 16 minutes** on their phone.
 
 Here's how I do it.
 
@@ -84,7 +84,7 @@ I think cutting back on screen time can go too far. I certainly don't limit the 
 
 I did actually try the dumbphone thing. (My Nokia 110 4G is still in the back of a drawer somewhere.) It's so damn inconvenient! The whole experiment usually falls apart the second you need two factor authentication, sometimes earlier when you need to navigate to a new place or just use your password manager.
 
-Based on the psychology literature, I'd advise against going "cold turkey" on a smartphone use, especially if your screen time is currently high (like, several hours a day). Monitor your usage instead, and cut back in areas that feel doable. If you've built up your screen time habit over years, you shouldn't expect it to vanish overnight.
+Based on the psychology literature, I'd advise against going "cold turkey" on smartphone use, especially if your screen time is currently high (like, several hours a day). Monitor your usage instead, and cut back in areas that feel doable. If you've built up your screen time habit over years, you shouldn't expect it to vanish overnight.
 
 ## 6) I indulge in doomscrolling occasionally (just not on my phone)
 
